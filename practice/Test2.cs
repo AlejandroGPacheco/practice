@@ -31,7 +31,7 @@ namespace practice
             for (int i = 0; i < list.Count; i++)
             {
                 
-                _log.LogInformation(list[i].EmployeeDetails() + " " + list[i].displaySalary());
+                //_log.LogInformation(list[i].EmployeeDetails() + " " + list[i].displaySalary());
             }
         }
     }
