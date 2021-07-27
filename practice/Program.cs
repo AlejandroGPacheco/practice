@@ -39,7 +39,7 @@ namespace practice
                     Console.WriteLine("{0}", mNode.Children[new YamlScalarNode("whatever")]);
                 }
                 */
-            }
+            //}
 
 
             /*
@@ -64,11 +64,12 @@ namespace practice
 
             var deserializer = new Serializer();
             var config = (Config)deserializer.Deserialize(input, typeof(Config));
-            */
+            
 
         }
     }
 
 }
 
-
+*/
+            
