@@ -8,6 +8,7 @@ using System.Collections.Generic;
 namespace practice
 
 {
+    //
     public class Test2 : ITest2
     {
         private readonly ILogger<Test2> _log;
