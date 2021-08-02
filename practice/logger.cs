@@ -45,7 +45,7 @@ namespace practice
 
                 Log.Logger.Information(list[i].EmployeeDetails() + " " + list[i].displaySalary());
             }
-
+            
             //JSON AND YAML PARSING HAPPENS HERE
             StreamReader reader = new StreamReader("C:\\Users\\178788\\Desktop\\practice\\practice\\json1.json");
             string jsonString = reader.ReadToEnd();
