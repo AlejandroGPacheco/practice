@@ -9,9 +9,6 @@ namespace practice
     class ContractEmployee : Employee
     {
         public ContractEmployee(string _name, int _age, double _salary) : base(_name, _age, _salary) { }
-        
-     
-
 
         public override string EmployeeDetails()
         {

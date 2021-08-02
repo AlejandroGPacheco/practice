@@ -21,7 +21,6 @@ namespace practice
 
             return name + " " + Convert.ToString(age); 
         }
-
         public override double displaySalary()
         {
             return salary;

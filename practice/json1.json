@@ -1,0 +1,14 @@
+{
+  "JsonValues": {
+    "people": {
+      "Person1": {
+        "Name": "a",
+        "Age": "50"
+      },
+      "Person2": {
+        "Name": "b",
+        "Age": "60"
+      }
+    }
+  }
+}

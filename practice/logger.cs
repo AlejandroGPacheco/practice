@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using Microsoft.Extensions.DependencyInjection;
+using YamlDotNet.RepresentationModel;
+using Newtonsoft.Json;
 
 namespace practice
 
@@ -42,10 +45,37 @@ namespace practice
 
                 Log.Logger.Information(list[i].EmployeeDetails() + " " + list[i].displaySalary());
             }
+            
+            //JSON AND YAML PARSING HAPPENS HERE
+            StreamReader reader = new StreamReader("C:\\Users\\178788\\Desktop\\practice\\practice\\json1.json");
+            string jsonString = reader.ReadToEnd();
 
-          
+            var people = JsonConvert.DeserializeObject<Wrapper>(jsonString).Person;
+            foreach (var person in people.People)
+            {
+                Console.WriteLine("Name: {0} Age: {1} ", person.Value.name, person.Value.age);
+            }
 
-            svc.Run();
+            var reader2 = new StreamReader("C:\\Users\\178788\\Desktop\\practice\\practice\\YamlPractice.yml");
+            var yaml = new YamlStream();
+            yaml.Load(reader2);
+            var mapping = (YamlMappingNode)yaml.Documents[0].RootNode;
+
+
+            foreach (var entry in mapping.Children)
+            {
+                var myKey = ((YamlScalarNode)entry.Key).Value;
+
+                Console.WriteLine("Key: {0} Value: {1}", myKey, entry.Value);
+                if (myKey != "turtle-doves")
+                {
+                    continue;
+                }
+            }
+
+
+
+                svc.Run();
         }
 
        
@@ -65,3 +95,4 @@ namespace practice
 
     
 }
+
